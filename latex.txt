@@ -1,0 +1,194 @@
+%-------------------------
+% Resume in LaTeX
+% Author: Devansh Vora
+% License: MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}
+  {\vspace{-4pt}\scshape\raggedright\large}
+  {}
+  {0em}
+  {}
+  [\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure ATS-parsable PDF
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{%
+  \item\small{%
+    {#1 \vspace{-2pt}}%
+  }%
+}
+
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{%
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & #2 \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\bullet$}}$} % Fixed syntax
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Devansh Vora} \\ \vspace{5pt}
+    \small \href{mailto:devanshvora03@gmail.com}{\underline{devanshvora03@gmail.com}} $|$
+    9429734857 $|$
+    Ahmedabad, India $|$
+    \href{https://www.linkedin.com/in/devanshvora03/}{\underline{LinkedIn: devanshvora03}} $|$
+    \href{https://github.com/Devanshvora03}{\underline{GitHub: Devanshvora03}} \\
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Government Engineering College, Gandhinagar}{2021-2025}
+      {B.E. in Computer Engineering}{CGPA: 8, SPI (Sem 7): 8.92}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Communication Crafts Pvt. Ltd.}{Dec 2024 -- May 2025}
+      {AI - Engineer Intern}{Ahmedabad}
+      \resumeItemListStart
+        \resumeItem{\textbf{Brand Infringement Detection System}}
+        \begin{itemize}[leftmargin=1.0em]
+          \item Finetuned \textbf{CLIP ViT-L/14} with \textbf{FP16 Mixed Precision} to identify brand infringement (structure) by transforming absolute values into discrete labels presenting a new approach
+          \item Developed a custom \textbf{Manhattan-Vectorized-Loss-Function}, improving accuracy 3x over traditional contrastive loss function
+          \item Deployed a serverless endpoint on \textbf{RunPod} with a custom Docker image for scalable, faster image processing
+        \end{itemize}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Cilans Systems Pvt. Ltd.}{Jun 2024 -- Jul 2024}
+      {AI - Engineer Intern}{Ahmedabad}
+      \resumeItemListStart
+        \resumeItem{\textbf{Customer Agent Transcript Audit Report Generator}}
+        \begin{itemize}[leftmargin=1.0em]
+          \item Developed a \textbf{Gen AI} application using LLMs (\textbf{Mistral-Large}, GPT-4) to analyze agent-customer transcripts
+          \item Automated report generation on agent's response, empathy, and problem-solving for performance insights
+          \item Leveraged \textbf{AWS Bedrock} as inference engine for the case of mistral-large
+        \end{itemize}
+        \resumeItem{\textbf{Legal-GPT}}
+        \begin{itemize}[leftmargin=1.0em]
+          \item Created a \textbf{RAG app} on legal terminology (IPC Sections of India) using LLMs (GPT-4, mistral, Gemini, llama3) using platforms like \textbf{Hugging Face} and \textbf{Ollama}, \& frameworks like \textbf{Langchain}
+        \end{itemize}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {DevNullX Technology Pvt. Ltd.}{Dec 2023 -- Feb 2024}
+      {Django Backend Intern}{Remote}
+      \resumeItemListStart
+        \resumeItem{\textbf{Salesman Expense and Data Tracking System}}
+        \begin{itemize}[leftmargin=1.0em]
+          \item Developed this using \textbf{Python-Django} to track expenses by calculating distances with the \textbf{MapMyIndia axial distance} formula, based on coordinates entered by salesmen during their journey
+          \item The system then visualizes sales routes and locations on an interactive map using \textbf{Folium}, optimizing route management and expense monitoring
+        \end{itemize}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{UpdateBuddy AI} $|$ \href{https://updatebuddy.streamlit.app}{\underline{updatebuddy.streamlit.app}} $|$ \href{https://github.com/Devanshvora03/work-update-generator}{\underline{Github}}}{}
+      \resumeItemListStart
+        \resumeItem{Developed a \textbf{multi-level AI Agent} to decide, generate, \& format daily work updates for more than 50 daily users}
+        \resumeItem{Agent implements \textbf{chain-of-thought} using Groq's \textbf{Deepseek-r1-distill-qwen-32b}}
+        \resumeItem{Agent selects \textbf{Jira/Teams templates} based on tense and language for accurate generation}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Movie Recommendation System} $|$ \href{https://github.com/Devanshvora03/movie-recommendation-system}{\underline{Github}}}{}
+      \resumeItemListStart
+        \resumeItem{Built a \textbf{recommendation system} using NLP and vector techniques, extracting features like genres and cast}
+        \resumeItem{Applied \textbf{text vectorization and cosine similarity} for content-based filtering, ensuring accurate recommendations}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Rainfall Prediction System} $|$ \href{https://github.com/Devanshvora03/rainfall-prediction-system}{\underline{Github}}}{}
+      \resumeItemListStart
+        \resumeItem{Developed a \textbf{Random Forest Classifier} with data preprocessing, feature encoding, and multicollinearity removal}
+        \resumeItem{Conducted EDA with visualizations and optimized performance using \textbf{GridSearchCV}, evaluating with accuracy and confusion matrix}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+  \resumeSubHeadingListStart
+    \resumeSubItem{\textbf{Oracle Cloud Infrastructure 2024 Generative AI Certified Professional} - \href{https://drive.google.com/file/d/1WiyFTDqfofkBHpWGuV5OOL5lYe3CAVcQ/view?usp=sharing}{\underline{View Certificate}}}
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Languages:} Python, Java \\
+      \textbf{AI - ML Fields:} Supervised, Unsupervised, Neural Networks, Finetuning, NLP, Vision Transformers, LLM, RAG, Agents, Prompt Programming \\
+      \textbf{Tools:} Github, Docker, Runpod, Hugging Face, Ollama, AWS Bedrock, S3 \\
+      \textbf{Web Frameworks:} Django, Flask, Streamlit \\
+      \textbf{Soft Skills:} Leadership, Teamwork, Problem-Solving, Public Speaking, Adaptability, Project Management
+    }}
+  \end{itemize}
+
+\end{document}
