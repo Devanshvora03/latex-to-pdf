@@ -11,7 +11,6 @@ def create_pdf_from_file(file_content, output_filename='output'):
     tex_file = temp_dir / f"{output_filename}.tex"
     pdf_file = temp_dir / f"{output_filename}.pdf"
     
-    # Ensure absolute paths
     tex_file = tex_file.absolute()
     pdf_file = pdf_file.absolute()
     
@@ -19,22 +18,26 @@ def create_pdf_from_file(file_content, output_filename='output'):
         f.write(file_content)
     
     try:
-        # Run pdflatex twice for references and TOC
+        # Run pdflatex twice and capture output
         for _ in range(2):
-            subprocess.run(
+            process = subprocess.run(
                 ['pdflatex', '-interaction=nonstopmode', str(tex_file)],
                 capture_output=True,
                 text=True,
                 cwd=temp_dir
             )
+            if process.returncode != 0:
+                return None, False, f"pdflatex failed with error:\n{process.stderr}"
         
         if pdf_file.exists():
             with open(pdf_file, 'rb') as f:
                 pdf_bytes = f.read()
             return pdf_bytes, True, "PDF generated successfully!"
         else:
-            return None, False, "PDF generation failed"
-            
+            return None, False, "PDF generation failed: No PDF file produced. pdflatex output:\n" + process.stderr
+    
+    except FileNotFoundError:
+        return None, False, "Error: pdflatex not found in environment."
     except Exception as e:
         return None, False, f"Error: {str(e)}"
 
